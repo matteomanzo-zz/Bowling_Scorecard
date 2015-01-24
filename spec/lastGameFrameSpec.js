@@ -8,9 +8,12 @@ describe('The last game frame', function() {
 
   describe('by default', function() {
 
-    it('should have 2 rolls', function() {
+    it('should have two rolls', function() {
       expect(lastGameFrame.rolls).toEqual(2);
     });
 
+    it('should contain 10 pins', function() {
+      expect(lastGameFrame.pins).toEqual(10);
+    });
   });
 });
