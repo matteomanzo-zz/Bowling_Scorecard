@@ -9,7 +9,6 @@ describe('The first 9 game frames', function() {
   describe('by default', function() {
 
     it('should contain 10 pins each', function() {
-      console.log(gameFrame)
       expect(gameFrame.pins).toEqual(10);
     });
 
@@ -20,6 +19,11 @@ describe('The first 9 game frames', function() {
     it('should have the second roll score equal to 0', function() {
       expect(gameFrame.secondRollScore).toEqual(0);
     });
+
+    it('should have a total score of 0', function() {
+      expect(gameFrame.totalScore).toEqual(0);
+    });
+
   });
 
   describe('when receive rolls', function() {
