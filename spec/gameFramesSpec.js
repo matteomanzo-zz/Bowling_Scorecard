@@ -33,16 +33,18 @@ describe('The first 9 game frames', function() {
       expect(gameFrame.firstRollScore).toEqual(4);
     });
 
-    it('the first roll score should be a strike if 10 pins are knocked down', function() {
-      gameFrame.receiveFirstRoll(10);
-      expect(gameFrame.firstRollScore).toEqual('Strike!');
-    });
-
     it('the second roll score should be the number of knocked down pins added to the first roll score', function() {
       gameFrame.receiveFirstRoll(4);
       gameFrame.receiveSecondRoll(5);
       expect(gameFrame.totalScore).toEqual(9);
     });
+
+    it('the second roll score should be 0 even with an input if the first roll was a strike', function() {
+      gameFrame.receiveFirstRoll(10);
+      gameFrame.receiveSecondRoll(34);
+      expect(gameFrame.totalScore).toEqual(10);
+    });
+
   });
 
 });
