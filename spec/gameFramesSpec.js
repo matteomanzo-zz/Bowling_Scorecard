@@ -45,6 +45,10 @@ describe('The first 9 game frames', function() {
       expect(gameFrame.totalScore).toEqual(10);
     });
 
+    it('should check if is a strike', function() {
+      gameFrame.receiveFirstRoll(10);
+      expect(gameFrame._isAStrike()).toBe(true);
+    });
   });
 
 });
