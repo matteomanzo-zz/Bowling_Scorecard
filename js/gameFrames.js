@@ -1,7 +1,7 @@
 var GameFrames = function() {
   this.firstRollScore = 0;
   this.secondRollScore = 0;
-  this.totalScore = 0;
+  this.frameScore = 0;
   this.pins = 10;
 };
 
@@ -12,7 +12,7 @@ GameFrames.prototype.receiveFirstRoll = function(knockedDownPins) {
 GameFrames.prototype.receiveSecondRoll = function(knockedDownPins) {
   this.secondRollScore = knockedDownPins;
   if (this.firstRollScore === 10) {this.secondRollScore = 0};
-  this.totalScore = this.firstRollScore + this.secondRollScore;
+  this.frameScore = this.firstRollScore + this.secondRollScore;
 };
 
 GameFrames.prototype._isAStrike = function() {
@@ -20,5 +20,5 @@ GameFrames.prototype._isAStrike = function() {
 };
 
 GameFrames.prototype._isASpare = function() {
-  if (this.firstRollScore != 10) {return this.totalScore === 10};
+  if (this.firstRollScore != 10) {return this.frameScore === 10};
 };

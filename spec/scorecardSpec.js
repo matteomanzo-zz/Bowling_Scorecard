@@ -12,5 +12,8 @@ describe('The scorecard', function() {
       expect(scorecard.gameFrames).toEqual(10);
     });
 
+    it('the total score should be 0', function() {
+      expect(scorecard.totalScore).toEqual(0);
+    });
   });
 });
