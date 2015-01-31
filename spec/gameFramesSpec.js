@@ -49,6 +49,13 @@ describe('The first 9 game frames', function() {
       gameFrame.receiveFirstRoll(10);
       expect(gameFrame._isAStrike()).toBe(true);
     });
+
+    it('should check if is a spare', function() {
+      gameFrame.receiveFirstRoll(6);
+      gameFrame.receiveSecondRoll(4);
+      expect(gameFrame._isAStrike()).toBe(false);
+      expect(gameFrame._isASpare()).toBe(true);
+    });
   });
 
 });

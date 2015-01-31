@@ -18,3 +18,7 @@ GameFrames.prototype.receiveSecondRoll = function(knockedDownPins) {
 GameFrames.prototype._isAStrike = function() {
   return this.firstRollScore === 10;
 };
+
+GameFrames.prototype._isASpare = function() {
+  if (this.firstRollScore != 10) {return this.totalScore === 10};
+};
