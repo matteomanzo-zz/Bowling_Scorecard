@@ -3,7 +3,7 @@ describe('The first 9 game frames', function() {
   var gameFrame;
 
   beforeEach(function() {
-    gameFrame = new GameFrames();
+    gameFrame = new GameFrame();
   });
 
   describe('by default', function() {
